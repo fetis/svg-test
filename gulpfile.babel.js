@@ -45,3 +45,54 @@ gulp.task('svg-defs', () => {
     }))
     .pipe(gulp.dest('dist'));
 })
+
+gulp.task('svg-symbol', () => {
+  return gulp.src(files)
+    .pipe(svgSprite({
+        shape: {
+            transform: []
+        },
+        mode: {
+            symbol: {
+                dest: '',
+                bust: false,
+                example: true
+            }
+        }
+    }))
+    .pipe(gulp.dest('dist'));
+})
+
+gulp.task('svg-view', () => {
+  return gulp.src(files)
+    .pipe(svgSprite({
+        shape: {
+            transform: []
+        },
+        mode: {
+            view: {
+                dest: '',
+                bust: false,
+                example: true
+            }
+        }
+    }))
+    .pipe(gulp.dest('dist'));
+})
+
+gulp.task('svg-stack', () => {
+  return gulp.src(files)
+    .pipe(svgSprite({
+        shape: {
+            transform: []
+        },
+        mode: {
+            stack: {
+                dest: '',
+                bust: false,
+                example: true
+            }
+        }
+    }))
+    .pipe(gulp.dest('dist'));
+})
